@@ -79,7 +79,9 @@ if __name__ == "__main__":
 
     manager.SetIOSettings(IOsettings)
 
-
+    IOsettings.SetBoolProp(EXP_FBX_MATERIAL, True)
+    IOsettings.SetBoolProp(EXP_FBX_TEXTURE, True)
+    IOsettings.SetBoolProp(EXP_FBX_EMBEDDED, True)  # or False if you want ASCII
 
     # Create an empty scene
     myScene = FbxScene.Create(manager, "")
@@ -98,7 +100,7 @@ if __name__ == "__main__":
 
     # exports the scene in fbx format at the path:
     save_path = "./resFbx/"
-    filename =  sys.argv[2] + ".fbx"
+    filename = sys.argv[2] + ".fbx"
 
     # Specify the path and name of the file to be imported                                                                            
     exportstat = exporter.Initialize(save_path + filename, -1)
