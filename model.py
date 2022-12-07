@@ -19,14 +19,8 @@ import Animate as anim
 from chumpy.ch import MatVecMult
 
 
-
-
-
 from matplotlib import pyplot
 from mpl_toolkits.mplot3d import Axes3D
-
-
-
 
 
 # impostare input path
@@ -35,7 +29,7 @@ def CreateScene(pSdkManager, pScene, pSampleFileName):
 
     myMat = sio.loadmat(sys.argv[1])
 
-    MeshNode,Nodi = CreateHumanModel(pSdkManager, "human", pScene, 6, myMat)  
+    MeshNode, Nodi = CreateHumanModel(pSdkManager, "human", pScene, 6, myMat)
 
     lAnimStack = FbxAnimStack.Create(pScene, "Take001")
 
@@ -46,12 +40,10 @@ def CreateScene(pSdkManager, pScene, pSampleFileName):
     lAnimStack.AddMember(lAnimLayer)
 
     #print pScene.GetGlobalSettings().GetAxisSystem().GetUpVector()
-    
-    anim.Animate(MeshNode, Nodi, lAnimLayer, pSdkManager,pScene, True, myMat, initFrame, finalFrame, translation) 
-        
-    
-    return True
+    myModel, Nodi, pAnimLayer, pSdkManager, pScene, Rotation, myMat, initFrame, finalFrame, translation, m
+    anim.Animate(MeshNode, Nodi, lAnimLayer, pSdkManager, pScene, True, myMat, initFrame, finalFrame, translation)
 
+    return True
 
 
 def GetNodeHierarchy(myScene, manager):
@@ -61,7 +53,6 @@ def GetNodeHierarchy(myScene, manager):
     root = fbx.FbxNode.Create(manager, "character")
 
     myMeshNode = fbx.FbxNode.Create(manager, 'myMesh')
-
 
 
     names = [ "Pelvis", "L_Hip", "R_Hip", "Spine1", "L_Knee", "R_Knee", "Spine2", "L_Ankle", "R_Ankle", "Spine3", "L_Foot", "R_Foot", "Neck", "L_Collar", 
@@ -97,7 +88,7 @@ def GetNodeHierarchy(myScene, manager):
     return Nodi, myMeshNode
 
 
-def CreateSkeleton(pSdkManager, pScene,m, myMesh):
+def CreateSkeleton(pSdkManager, pScene, m, myMesh):
 
     myRoot = pScene.GetRootNode()
 
@@ -273,7 +264,7 @@ def CreateHumanModel(pSdkManager, pName, myScene, frameNumber, myMat, initFrame,
 
 def AttachTexture(mesh):
 
-    normalPosZ = fbx.FbxVector4( 0, 0, 1 ) # positive-Z normal vector. 
+    normalPosZ = fbx.FbxVector4(0, 0, 1) # positive-Z normal vector.
 
 
     layer = mesh.GetLayer( 0 )
@@ -296,7 +287,7 @@ def AttachTexture(mesh):
     normalLayerElement.GetDirectArray().Add( normalPosZ )
     
     # Assign the normal layer element to the mesh's layer 0.
-    layer.SetNormals( normalLayerElement )
+    layer.SetNormals(normalLayerElement)
 
 
 
@@ -306,34 +297,16 @@ def CreateSkinning(MeshNode, Nodes):
 
 
 
-    
 def ExtractModel(frameNumber, myMat, initFrame, meshMat):
 
     
     m = load_model( './models/basicmodel_m_lbs_10_207_0_v1.0.0.pkl')
 
-
-
-
     m.pose[:] = np.zeros((72))
-
-
-
-
-    
-
-
-
 
     LocalPosition = []
 
     LocalPosition = anim.calcLocalPosition(m, getVertices())
-
-
-
-
-    
-
 
     jointRotation = np.zeros((24,3))
 
