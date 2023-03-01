@@ -1,0 +1,6 @@
+test_from_template
+assert_equal
+process_str
+normalize_whitespace
+pyf_src
+expected_pyf

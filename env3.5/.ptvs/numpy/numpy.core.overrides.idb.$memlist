@@ -1,0 +1,14 @@
+add_docstring
+array_function_dispatch
+functools
+os
+_get_implementing_args
+ARRAY_FUNCTION_ENABLED
+ArgSpec
+implement_array_function
+collections
+verify_matching_signatures
+textwrap
+set_module
+array_function_from_dispatcher
+getargspec

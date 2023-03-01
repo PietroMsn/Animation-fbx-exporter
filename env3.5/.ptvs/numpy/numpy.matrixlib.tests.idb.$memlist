@@ -1,0 +1,7 @@
+test_interaction
+test_numeric
+test_regression
+test_multiarray
+test_matrix_linalg
+test_defmatrix
+test_masked_matrix

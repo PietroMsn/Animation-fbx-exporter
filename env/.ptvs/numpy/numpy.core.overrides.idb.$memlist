@@ -1,0 +1,13 @@
+getargspec
+array_function_dispatch
+array_function_from_dispatcher
+os
+_get_implementing_args
+ENABLE_ARRAY_FUNCTION
+implement_array_function
+collections
+verify_matching_signatures
+functools
+set_module
+ArgSpec
+add_docstring

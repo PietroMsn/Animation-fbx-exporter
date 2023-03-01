@@ -1,0 +1,7 @@
+test_scripts
+test_numpy_version
+test_reloading
+test_warnings
+test_public_api
+test_ctypeslib
+test_matlib

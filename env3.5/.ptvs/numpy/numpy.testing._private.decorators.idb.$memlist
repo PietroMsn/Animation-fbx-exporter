@@ -1,0 +1,15 @@
+deprecated
+assert_warns
+setastest
+absolute_import
+knownfailureif
+slow
+_needs_refcount
+division
+SkipTest
+print_function
+skipif
+__all__
+HAS_REFCOUNT
+collections_abc
+parametrize

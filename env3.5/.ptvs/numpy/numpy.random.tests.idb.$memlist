@@ -1,0 +1,10 @@
+test_random
+test_seed_sequence
+test_regression
+test_direct
+data
+test_smoke
+test_randomstate_regression
+test_generator_mt19937
+test_generator_mt19937_regressions
+test_randomstate

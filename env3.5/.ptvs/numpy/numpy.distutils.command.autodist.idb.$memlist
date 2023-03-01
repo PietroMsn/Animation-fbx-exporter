@@ -1,0 +1,10 @@
+check_compiler_gcc4
+check_restrict
+check_inline
+absolute_import
+division
+check_gcc_function_attribute
+print_function
+textwrap
+check_gcc_variable_attribute
+check_gcc_function_attribute_with_intrinsics
